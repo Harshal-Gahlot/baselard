@@ -345,7 +345,9 @@ button {
 .hero-footnote {
     display: flex;
     justify-content: space-between;
-    max-width: 420px;
+    align-items: center;
+    gap: 16px;
+    max-width: 480px;
     margin-top: 72px;
     color: var(--dim);
     font-size: 9px;
@@ -1151,13 +1153,13 @@ button {
     align-items: center;
 }
 .track-left {
-    animation: ticker 40s linear infinite;
+    animation: ticker 46s linear infinite;
 }
 .track-right {
-    animation: ticker-reverse 36s linear infinite;
+    animation: ticker-reverse 20s linear infinite;
 }
 .track-publications {
-    animation: ticker 46s linear infinite;
+    animation: ticker-reverse 60s linear infinite;
 }
 .logo-ticker:hover .logo-ticker-track {
     animation-play-state: paused;
@@ -2747,7 +2749,6 @@ html.reveal-enabled [data-reveal].is-visible {
         bottom: 18px;
         font-size: 7px;
         width: 100%;
-        background-color: #0f0;
         align-self: center;
     }
     .hero-bottom span:nth-child(2) {

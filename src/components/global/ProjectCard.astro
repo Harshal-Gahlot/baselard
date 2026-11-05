@@ -1,7 +1,7 @@
 ---
 import type { Project } from '../../data/projects';
 interface Props { project: Project; index?: number; compact?: boolean; }
-const { project, index = 0, compact = false } = Astro.props;
+const { project, compact = false } = Astro.props;
 const visualClass = `project-visual visual-${project.visual}`;
 ---
 <article class:list={["project-card", compact && "project-card-compact"]} data-project-card data-category={project.category} data-search={`${project.title} ${project.services} ${project.category}`.toLowerCase()}>

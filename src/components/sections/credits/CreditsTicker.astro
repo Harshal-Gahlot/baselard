@@ -44,7 +44,7 @@ const pubItems = [...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS
 
     <!-- Row 2: Studio Productions & Screen Collaborations (Scroll Right / Reverse) -->
     <div class="logo-ticker logo-ticker-row2" aria-label="Studio collaborations and catalog credits">
-      <div class="logo-ticker-track track-right">
+      <div class="logo-ticker-track track-left">
         {row2Items.map((item) => (
           <div class="ticker-card ticker-card-alt">
             <div class="ticker-card-logo">
@@ -54,7 +54,7 @@ const pubItems = [...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS
               <b>{item.name}</b>
               <small>{item.badge}</small>
             </div>
-            <span class="ticker-card-note">{item.note}</span>
+            {/* <span class="ticker-card-note">{item.note}</span> */}
             <i class="ticker-sep ticker-sep-alt" aria-hidden="true">✦</i>
           </div>
         ))}
