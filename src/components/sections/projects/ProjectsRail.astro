@@ -1,0 +1,12 @@
+---
+import SectionHeading from '../../global/SectionHeading.astro';
+import ProjectCard from '../../global/ProjectCard.astro';
+import { FEATURED_PROJECTS } from '../../../data/projects';
+---
+<section class="section section-work section-work-rail">
+  <div class="wrap">
+    <SectionHeading index="01" eyebrow="RECENT PROJECTS" title="New work. Same obsession." text="Music, artists and pictures in motion." link="/work/" linkLabel="Browse the archive" />
+  </div>
+  <div class="project-rail wrap">{FEATURED_PROJECTS.map((project, index) => <ProjectCard project={project} index={index} compact />)}
+  </div>
+</section>

@@ -1,0 +1,4 @@
+---
+import { TESTIMONIALS } from '../../../data/studio';
+---
+<section class="section section-testimonials"><div class="wrap testimonial-list-wrap"><div><span class="eyebrow">05 / WORD OF MOUTH</span><h2>Trust is<br /><em>earned.</em></h2><p>Notes from artists and clients, as published on the studio website.</p></div><div class="testimonial-list">{TESTIMONIALS.map((item) => <details><summary><b>{item.name}</b><span>★★★★★</span><i>＋</i></summary><blockquote>“{item.quote}”</blockquote></details>)}</div></div></section>

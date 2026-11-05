@@ -1,0 +1,68 @@
+---
+import SectionHeading from '../../global/SectionHeading.astro';
+import CreditLogo from './CreditLogo.astro';
+import { PRESS_OUTLETS, COLLABORATORS } from '../../../data/studio';
+---
+<section class="section section-credits">
+  <div class="wrap">
+    <SectionHeading
+      index="02"
+      eyebrow="CREDITS & RECOGNITION"
+      title="Good company. Good work."
+      text="Selected collaborators and publications that have featured the founder or studio."
+      link="/press/"
+      linkLabel="Press & recognition"
+    />
+
+    <div class="credits-block">
+      <div class="credits-block-header">
+        <span class="eyebrow">COLLABORATION / LABEL & PRODUCTION CREDITS</span>
+        <span class="credits-count">{COLLABORATORS.length} VERIFIED CREDITS</span>
+      </div>
+      <div class="credits-wall">
+        {COLLABORATORS.map((item) => (
+          <div class="credit-mark">
+            <div class="credit-mark-top">
+              <div class="credit-mark-logo">
+                <CreditLogo id={item.id} size={46} />
+              </div>
+              <span class="credit-badge">{item.badge}</span>
+            </div>
+            <div class="credit-mark-body">
+              <b>{item.name}</b>
+              <span class="credit-category">{item.category}</span>
+              <small>{item.note}</small>
+            </div>
+            <div class="credit-mark-footer">
+              <span class="credit-verified">
+                <span class="credit-verified-dot" aria-hidden="true"></span>
+                Official Studio Credit
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="credits-block credits-press">
+      <div class="credits-block-header">
+        <span class="eyebrow">AS FEATURED ON</span>
+        <span class="credits-count">{PRESS_OUTLETS.length} PUBLICATIONS</span>
+      </div>
+      <div class="press-wordmarks">
+        {PRESS_OUTLETS.map((item) => (
+          <a href={item.url} target="_blank" rel="noreferrer" class="press-item">
+            <div class="press-logo-wrap">
+              <CreditLogo id={item.id} size={32} />
+            </div>
+            <div class="press-info">
+              <span class="press-title">{item.name}</span>
+              <small class="press-type">{item.type}</small>
+            </div>
+            <span class="press-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

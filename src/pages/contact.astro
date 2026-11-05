@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config/site';
+---
+<BaseLayout title="Contact — Baselard Studios" description="Start a music, recording, sound or video project with Baselard Studios in Udaipur.">
+  <section class="page-hero contact-page-hero"><div class="wrap"><span class="eyebrow">LET’S MAKE SOMETHING / CONTACT</span><h1>What are you<br /><em>working on?</em></h1><p>Tell us a little about the idea. We’ll take it from there.</p></div></section>
+  <section class="section contact-page"><div class="wrap contact-page-grid"><div class="contact-form-panel"><span class="eyebrow">PROJECT ENQUIRY</span><form data-enquiry-form>
+    <label>Your name<input name="name" autocomplete="name" required placeholder="Name" /></label>
+    <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+    <label>What do you need?<select name="service" required><option value="" disabled selected>Select a discipline</option><option>Music production / composition</option><option>Recording / voiceover / dubbing</option><option>Mix & mastering</option><option>Video production</option><option>Artist branding / consulting</option><option>Something else</option></select></label>
+    <label>Tell us about the project<textarea name="message" rows="5" required placeholder="A few lines about the brief, timeline and what you have in mind…"></textarea></label>
+    <button class="button button-light" type="submit">Prepare enquiry email <span>↗</span></button>
+    <p class="form-note">This v1 opens your email app with the enquiry prefilled. No information is stored on this website.</p>
+  </form></div><aside class="contact-details"><div><span class="eyebrow">DIRECT CONTACT</span><a href={`mailto:${SITE.email}`}>{SITE.email} ↗</a><a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay} ↗</a><a href={SITE.whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a></div><div><span class="eyebrow">VISIT THE STUDIO</span><p>{SITE.address}</p><p>{SITE.hours}</p><a class="text-link" href={SITE.map} target="_blank" rel="noreferrer">Get directions ↗</a></div><div class="contact-coordinate"><b>UDAIPUR</b><span>RAJASTHAN · INDIA</span></div></aside></div></section>
+</BaseLayout>

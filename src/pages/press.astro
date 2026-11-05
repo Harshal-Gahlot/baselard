@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PRESS_OUTLETS, AWARDS, COLLABORATORS } from '../data/studio';
+import { IMAGES } from '../config/site';
+---
+<BaseLayout title="Press & Recognition — Baselard Studios" description="Selected press features, collaborators and recognition associated with Baselard Studios and its founder.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">PRESS / RECOGNITION</span><h1>Good work<br /><em>travels.</em></h1><p>A selection of publications and recognitions shown on Baselard’s public founder and press pages.</p><div class="page-hero-meta"><span>FEATURES & AWARDS</span><span>SELECTED / PUBLIC LISTINGS</span></div></div></section>
+  <section class="section press-page"><div class="wrap press-layout"><div><span class="eyebrow">AS FEATURED ON</span><h2>In the<br />conversation.</h2><p>These publication names and outbound links appear in the founder page’s public press strip.</p></div><div class="press-list">{PRESS_OUTLETS.map((item, index) => <a href={item.url} target="_blank" rel="noreferrer"><span>0{index + 1}</span><b>{item.name}</b><i>↗</i></a>)}</div></div></section>
+  <section class="section section-soft"><div class="wrap award-layout"><div><span class="eyebrow">AWARDS & RECOGNITION</span><h2>Moments<br />to remember.</h2><img src={IMAGES.award} alt="Aikarth Purohit receiving an award" loading="lazy" width="1000" height="563"/></div><ol>{AWARDS.map((award, index) => <li><span>0{index + 1}</span>{award}</li>)}</ol></div></section>
+  <section class="section press-collaborators"><div class="wrap"><span class="eyebrow">COLLABORATORS / LABEL & PRODUCTION CREDITS</span><div>{COLLABORATORS.map((item) => <span>{item.name}<small>{item.note}</small></span>)}</div></div></section>
+</BaseLayout>

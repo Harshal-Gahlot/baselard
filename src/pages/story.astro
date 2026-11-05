@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, IMAGES } from '../config/site';
+import { STUDIO } from '../data/studio';
+---
+<BaseLayout title="Our Story — Baselard Studios" description="Meet Aikarth Purohit and discover the thinking behind Baselard Studios.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">THE PEOPLE / THE THINKING</span><h1>Made from<br /><em>a love of sound.</em></h1><p>The people and practice behind Baselard Studios.</p><div class="page-hero-meta"><span>FOUNDER / AIKARTH PUROHIT</span><span>UDAIPUR · INDIA</span></div></div></section>
+  <section class="section story-founder"><div class="wrap story-founder-grid"><div class="story-image"><img src={IMAGES.performance} alt="Aikarth Purohit performing with a guitar" loading="lazy" width="1024" height="1024"/><span class="image-caption">MUSIC / PERFORMANCE</span></div><div><span class="eyebrow">FOUNDER / MUSIC DIRECTOR / SINGER</span><h2>{STUDIO.founder}</h2><p>{STUDIO.founder} is a music director and singer, and the founder of Baselard Studios. The studio’s public profile describes work across original music, film songs, live performance and collaborations with music labels.</p><p>Baselard brings those creative and technical disciplines together: a space for artists to record, produce, finish and share work.</p><a class="text-link" href={SITE.instagram} target="_blank" rel="noreferrer">Follow Aikarth on Instagram ↗</a></div></div></section>
+  <section class="section story-principles"><div class="wrap"><span class="eyebrow">A FEW GUIDING IDEAS</span><div class="principle-list"><div><span>01</span><h3>Listen first.</h3><p>Understand the idea before reaching for a sound.</p></div><div><span>02</span><h3>Craft matters.</h3><p>Good work is built through attention, iteration and collaboration.</p></div><div><span>03</span><h3>Stay curious.</h3><p>Music, image and technology are different tools for the same impulse: expression.</p></div></div></div></section>
+</BaseLayout>

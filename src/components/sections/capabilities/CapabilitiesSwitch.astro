@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import CapabilitiesIndex from './CapabilitiesIndex.astro';
+import CapabilitiesGrid from './CapabilitiesGrid.astro';
+import CapabilitiesAccordion from './CapabilitiesAccordion.astro';
+const variant = EXPERIENCE.capabilities;
+---
+{variant === 'grid' ? <CapabilitiesGrid /> : variant === 'accordion' ? <CapabilitiesAccordion /> : <CapabilitiesIndex />}

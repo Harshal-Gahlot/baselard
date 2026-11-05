@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import ContactStatement from './ContactStatement.astro';
+import ContactSplit from './ContactSplit.astro';
+import ContactCard from './ContactCard.astro';
+const variant = EXPERIENCE.contact;
+---
+{variant === 'split' ? <ContactSplit /> : variant === 'card' ? <ContactCard /> : <ContactStatement />}

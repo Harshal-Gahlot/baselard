@@ -1,0 +1,123 @@
+---
+interface Props {
+  id: string;
+  size?: number;
+  class?: string;
+}
+
+const { id, size = 40, class: className = '' } = Astro.props;
+---
+
+{id === 'zee-music' && (
+  <svg viewBox="0 0 48 48" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Zee Music Company">
+    <rect width="48" height="48" rx="10" fill="#141414" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <circle cx="24" cy="24" r="17" stroke="rgba(229, 9, 20, 0.35)" stroke-width="1.2" stroke-dasharray="2 3"/>
+    <circle cx="24" cy="24" r="14" fill="#1b1818"/>
+    <path d="M17 18H31L20.8 29.5H31V32H17L27.2 20.5H17V18Z" fill="#F2F0E9"/>
+    <path d="M28 18H31L28.8 20.5H25.8L28 18Z" fill="#E50914"/>
+    <circle cx="31" cy="18" r="1.4" fill="#E50914"/>
+  </svg>
+)}
+
+{id === 'global-music' && (
+  <svg viewBox="0 0 48 48" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Global Music Junction">
+    <rect width="48" height="48" rx="10" fill="#141414" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <circle cx="24" cy="24" r="17" stroke="rgba(245, 130, 32, 0.3)" stroke-width="1"/>
+    <circle cx="24" cy="24" r="13" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <circle cx="24" cy="24" r="10" fill="#221A15" stroke="#F58220" stroke-width="1.2"/>
+    <path d="M13 24C13 17.9 17.9 13 24 13" stroke="#F58220" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M35 24C35 30.1 30.1 35 24 35" stroke="#F58220" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="24" y="27" font-family="'Space Grotesk', system-ui, sans-serif" font-size="7.5" font-weight="700" fill="#F2F0E9" text-anchor="middle" letter-spacing="-0.02em">GMJ</text>
+  </svg>
+)}
+
+{id === 'balaji-telefilms' && (
+  <svg viewBox="0 0 48 48" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Balaji Telefilms">
+    <rect width="48" height="48" rx="10" fill="#141414" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <circle cx="24" cy="24" r="17" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1"/>
+    <path d="M24 13L26.5 19C28.5 19 31 17 31 17C30 20.5 28.5 22 26 23C27 25 28.5 27 30 28C28 28.5 26 27.5 24.5 26.5V34H23.5V26.5C22 27.5 20 28.5 18 28C19.5 27 21 25 22 23C19.5 22 18 20.5 17 17C17 17 19.5 19 21.5 19L24 13Z" fill="#D4AF37"/>
+    <circle cx="24" cy="35" r="1.2" fill="#D4AF37"/>
+  </svg>
+)}
+
+{id === 'the-statesman' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="The Statesman">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <circle cx="18" cy="18" r="13" stroke="rgba(242, 240, 233, 0.2)" stroke-width="0.8" stroke-dasharray="1.5 2"/>
+    <text x="18" y="24" font-family="'Times New Roman', Georgia, serif" font-size="18" font-weight="700" fill="#F2F0E9" text-anchor="middle">S</text>
+    <text x="18" y="32" font-family="monospace" font-size="4" fill="#999891" text-anchor="middle" letter-spacing="0.1em">1875</text>
+  </svg>
+)}
+
+{id === 'ani' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="ANI News">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <rect x="5" y="9" width="26" height="18" rx="4" fill="#E50914"/>
+    <text x="18" y="22.5" font-family="'Space Grotesk', Arial, sans-serif" font-size="10.5" font-style="italic" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.02em">ANI</text>
+  </svg>
+)}
+
+{id === 'mid-day' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Mid-Day">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <text x="18" y="22" font-family="'Space Grotesk', Arial, sans-serif" font-size="7.5" font-style="italic" font-weight="900" fill="#F2F0E9" text-anchor="middle" letter-spacing="-0.04em">mid·day</text>
+    <circle cx="26" cy="16" r="1.5" fill="#E50914"/>
+  </svg>
+)}
+
+{id === 'yahoo-news' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Yahoo News">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <rect x="6" y="8" width="24" height="20" rx="5" fill="#6001D2"/>
+    <text x="15" y="23" font-family="Georgia, serif" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">Y</text>
+    <path d="M22 13V20M22 22.5V24" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+)}
+
+{id === 'dailyhunt' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Dailyhunt">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <path d="M18 10C18 10 13 11 13 16C13 18 15 19 18 19V10Z" fill="#00C853"/>
+    <path d="M18 10C18 10 23 11 23 16C23 18 21 19 18 19V10Z" fill="#00B4D8"/>
+    <path d="M18 26C18 26 13 25 13 20C13 18 15 17 18 17V26Z" fill="#FFB300"/>
+    <path d="M18 26C18 26 23 25 23 20C23 18 21 17 18 17V26Z" fill="#E50914"/>
+    <circle cx="18" cy="18" r="2.2" fill="#161616"/>
+  </svg>
+)}
+
+{id === 'ibtimes' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="IBTimes">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <rect x="6" y="10" width="24" height="16" rx="2" fill="#0A192F" stroke="#C5A059" stroke-width="1"/>
+    <text x="18" y="22" font-family="'Times New Roman', serif" font-size="9" font-weight="700" fill="#F2F0E9" text-anchor="middle" letter-spacing="0.04em">IBT</text>
+  </svg>
+)}
+
+{id === 'udaipurblog' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="UdaipurBlog">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <circle cx="18" cy="13" r="2.5" fill="#E67E22"/>
+    <path d="M12 24C12 20 15 17 18 17C21 17 24 20 24 24H12Z" stroke="#F39C12" stroke-width="1.2" fill="rgba(230, 126, 34, 0.15)"/>
+    <text x="18" y="27" font-family="'Space Grotesk', system-ui, sans-serif" font-size="6" font-weight="700" fill="#F2F0E9" text-anchor="middle" letter-spacing="0.05em">UB</text>
+  </svg>
+)}
+
+{id === 'latestly' && (
+  <svg viewBox="0 0 36 36" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="LatestLY">
+    <rect width="36" height="36" rx="8" fill="#161616" stroke="rgba(242, 240, 233, 0.14)" stroke-width="1"/>
+    <path d="M8 12L24 8L28 24L12 28L8 12Z" fill="#FF6F00"/>
+    <text x="18" y="22" font-family="'Space Grotesk', Arial, sans-serif" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.02em">LY</text>
+  </svg>
+)}
+
+{id === 'baselard-studios' && (
+  <svg viewBox="0 0 48 48" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" class:list={['credit-logo-svg', className]} role="img" aria-label="Baselard Studios">
+    <rect width="48" height="48" rx="10" fill="#141414" stroke="rgba(242, 240, 233, 0.16)" stroke-width="1"/>
+    <circle cx="24" cy="22" r="14" stroke="#F2F0E9" stroke-width="1.5"/>
+    <path d="M17 16H23C25 16 26.5 17.5 26.5 19.5C26.5 21.5 25 23 23 23H17V16Z" stroke="#F2F0E9" stroke-width="1.5"/>
+    <path d="M21 21V28H27" stroke="#F2F0E9" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="25" y="18" width="5" height="7" rx="2.5" fill="#F2F0E9"/>
+    <path d="M23 18C23 15 32 15 32 18" stroke="#F2F0E9" stroke-width="1.2" stroke-linecap="round"/>
+    <text x="24" y="42" font-family="'Space Grotesk', system-ui, sans-serif" font-size="5" font-weight="700" fill="#F2F0E9" text-anchor="middle" letter-spacing="0.08em">BASELARD</text>
+  </svg>
+)}

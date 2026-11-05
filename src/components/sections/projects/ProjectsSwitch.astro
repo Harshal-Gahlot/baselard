@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import ProjectsEditorial from './ProjectsEditorial.astro';
+import ProjectsIndex from './ProjectsIndex.astro';
+import ProjectsRail from './ProjectsRail.astro';
+const variant = EXPERIENCE.projects;
+---
+{variant === 'index' ? <ProjectsIndex /> : variant === 'rail' ? <ProjectsRail /> : <ProjectsEditorial />}

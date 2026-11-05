@@ -1,0 +1,8 @@
+---
+import SectionHeading from '../../global/SectionHeading.astro';
+import { SERVICES } from '../../../data/studio';
+---
+<section class="section section-capabilities"><div class="wrap"><SectionHeading index="03" eyebrow="THE DISCIPLINES / WHAT WE DO" title="Many ways to make something matter." text="A connected set of creative and technical capabilities — from the first idea to the final master." link="/services/" linkLabel="Explore capabilities" />
+  <div class="capability-index">{SERVICES.slice(0, 4).map((service) => <a href="/services/" class="capability-row"><span>{service.number}</span><h3>{service.title}</h3><p>{service.intro}</p><i>↗</i></a>)}</div>
+  <p class="capability-extra">ALSO: ARTIST BRANDING · CONSULTING · DISTRIBUTION · RECORD LABEL SUPPORT</p>
+</div></section>

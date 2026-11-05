@@ -1,0 +1,4 @@
+---
+import { TESTIMONIALS } from '../../../data/studio';
+---
+<section class="section section-testimonials"><div class="wrap"><div class="section-heading"><div class="section-heading-meta"><span class="section-index">05</span><span class="eyebrow">CLIENT NOTES</span></div><div class="section-heading-main"><h2>What they say<br/> about us.</h2><div class="section-heading-side"><p>Feedback shared publicly by people who have worked with the studio.</p></div></div></div><div class="testimonial-grid">{TESTIMONIALS.map((item, i) => <article><span>0{i + 1} / ★★★★★</span><blockquote>“{item.quote}”</blockquote><b>{item.name}</b><small>{item.rating}</small></article>)}</div></div></section>

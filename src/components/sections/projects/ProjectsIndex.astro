@@ -1,0 +1,12 @@
+---
+import SectionHeading from '../../global/SectionHeading.astro';
+import { FEATURED_PROJECTS } from '../../../data/projects';
+---
+<section class="section section-work section-work-index">
+  <div class="wrap">
+    <SectionHeading index="01" eyebrow="THE LATEST / THE LIST" title="A running record of things made." text="A tight index of selected releases. Open each title to locate its public release." link="/work/" linkLabel="Open full archive" />
+    <div class="featured-index">
+      {FEATURED_PROJECTS.map((project, index) => <a class="featured-index-row" href={project.watchUrl} target="_blank" rel="noreferrer"><span>0{index + 1}</span><b>{project.title}</b><small>{project.services}</small><i>↗</i></a>)}
+    </div>
+  </div>
+</section>

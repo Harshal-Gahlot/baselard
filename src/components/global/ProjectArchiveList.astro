@@ -1,0 +1,13 @@
+---
+import { PROJECTS } from '../../data/projects';
+---
+<div class="archive-list">
+  {PROJECTS.map((project, index) => (
+    <a class="archive-row" href={project.watchUrl} target="_blank" rel="noreferrer">
+      <span class="archive-no">{String(index + 1).padStart(2, '0')}</span>
+      <span class="archive-title">{project.title}</span>
+      <span class="archive-meta">{project.services}</span>
+      <span class="archive-arrow">↗</span>
+    </a>
+  ))}
+</div>

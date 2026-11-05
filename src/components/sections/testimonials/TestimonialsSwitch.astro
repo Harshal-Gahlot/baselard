@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import TestimonialFeature from './TestimonialFeature.astro';
+import TestimonialGrid from './TestimonialGrid.astro';
+import TestimonialList from './TestimonialList.astro';
+const variant = EXPERIENCE.testimonials;
+---
+{variant === 'grid' ? <TestimonialGrid /> : variant === 'list' ? <TestimonialList /> : <TestimonialFeature />}

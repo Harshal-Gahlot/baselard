@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SERVICES } from '../data/studio';
+import { IMAGES } from '../config/site';
+---
+<BaseLayout title="Capabilities — Baselard Studios" description="Recording, music production, mix and mastering, video production and artist services at Baselard Studios.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">CAPABILITIES / WHAT WE DO</span><h1>From first take<br /><em>to final frame.</em></h1><p>Creative direction and technical craft across music, sound, video and artist services.</p><div class="page-hero-meta"><span>FIVE CONNECTED DISCIPLINES</span><span>01—05</span></div></div></section>
+  <section class="section services-page"><div class="wrap services-layout"><div class="services-aside"><img src={IMAGES.microphone} alt="Recording microphone at Baselard Studios" loading="lazy" width="1024" height="1024"/><span class="image-caption">RECORDING / UDAIPUR</span><p>Made to support an idea at every stage — from capture and creation to finishing and release.</p></div><div class="services-detail">{SERVICES.map((service) => <article class="service-detail" id={`service-${service.number}`}><div><span class="eyebrow">{service.number} / SERVICE</span><h2>{service.title}</h2></div><div><p>{service.intro}</p><ul>{service.items.map((item) => <li>{item}</li>)}</ul></div></article>)}</div></div></section>
+  <section class="section section-dark services-end"><div class="wrap"><span class="eyebrow">HAVE A BRIEF?</span><h2>Let’s shape<br /><em>the right setup.</em></h2><a class="button button-light" href="/contact/">Talk to the studio ↗</a></div></section>
+</BaseLayout>

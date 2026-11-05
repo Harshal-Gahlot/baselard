@@ -1,0 +1,20 @@
+---
+import { SITE } from '../../config/site';
+---
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div>
+      <a class="footer-wordmark" href="/">BASELARD<span>®</span></a>
+      <p class="footer-tagline">Where sound meets vision.<br />Made with intent in Udaipur.</p>
+    </div>
+    <div class="footer-links">
+      <div><span class="eyebrow">EXPLORE</span><a href="/work/">Work</a><a href="/services/">Capabilities</a><a href="/studio/">Studio</a><a href="/story/">Our story</a><a href="/press/">Press</a></div>
+      <div><span class="eyebrow">CONNECT</span><a href={SITE.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href={SITE.youtube} target="_blank" rel="noreferrer">YouTube ↗</a><a href={`mailto:${SITE.email}`}>Email ↗</a><a href={SITE.whatsapp} target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© {new Date().getFullYear()} BASELARD STUDIOS</span>
+    <span>UDAIPUR, INDIA · EST. {SITE.founded}</span>
+    <a href="#main">BACK TO TOP ↑</a>
+  </div>
+</footer>

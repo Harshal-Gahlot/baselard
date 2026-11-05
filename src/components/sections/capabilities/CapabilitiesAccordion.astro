@@ -1,0 +1,13 @@
+---
+import { SERVICES } from '../../../data/studio';
+---
+<section class="section section-capabilities"><div class="wrap">
+  <div class="section-heading">
+    <div class="section-heading-meta">
+      <span class="section-index">03</span>
+      <span class="eyebrow">WHAT WE DO</span>
+    </div><div class="section-heading-main">
+      <h2>One studio.<br />Multiple disciplines.</h2>
+      <div class="section-heading-side"><p>Open a discipline to see what the studio can take on.</p><a class="text-link" href="/services/">Service details ↗</a></div></div></div>
+  <div class="capability-accordion">{SERVICES.map((service, i) => <details open={i === 0}><summary><span>{service.number}</span><b>{service.title}</b><i>＋</i></summary><div><p>{service.intro}</p><ul>{service.items.map((item) => <li class="capabilities-tag">{item}</li>)}</ul></div></details>)}</div>
+</div></section>

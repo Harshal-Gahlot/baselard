@@ -1,0 +1,55 @@
+---
+import CreditLogo from './CreditLogo.astro';
+import { PRESS_OUTLETS, COLLABORATORS } from '../../../data/studio';
+
+// Quadruple items to ensure seamless infinite looping on all screen sizes
+const tickerItems = [...COLLABORATORS, ...COLLABORATORS, ...COLLABORATORS, ...COLLABORATORS];
+---
+<section class="section section-credits credits-ticker-section">
+  <div class="wrap">
+    <div class="ticker-intro">
+      <span class="eyebrow">SELECTED CREDITS / 02</span>
+      <h2>Names that<br /><em>travel.</em></h2>
+      <div class="ticker-intro-side">
+        <p>Collaborators, labels and publications connected to Baselard’s studio catalog.</p>
+        <div class="studio-mini-badge">
+          <img src="/images/logo.jpg" alt="Baselard Studios Official Logo" width="28" height="28" loading="lazy" />
+          <span>Independent Audio · Udaipur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-ticker" aria-label="Selected collaborators">
+    <div class="logo-ticker-track">
+      {tickerItems.map((item) => (
+        <div class="ticker-card">
+          <div class="ticker-card-logo">
+            <CreditLogo id={item.id} size={36} />
+          </div>
+          <div class="ticker-card-info">
+            <b>{item.name}</b>
+            <small>{item.badge}</small>
+          </div>
+          <i class="ticker-sep" aria-hidden="true">✳</i>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="wrap ticker-press">
+    <div class="ticker-press-head">
+      <span class="eyebrow">FEATURED PUBLICATIONS</span>
+      <span class="ticker-press-subtitle">Media coverage & public founder mentions</span>
+    </div>
+    <div class="ticker-press-grid">
+      {PRESS_OUTLETS.map((item) => (
+        <a href={item.url} target="_blank" rel="noreferrer" class="ticker-press-chip">
+          <CreditLogo id={item.id} size={24} />
+          <span class="ticker-press-name">{item.name}</span>
+          <span class="ticker-press-arrow" aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

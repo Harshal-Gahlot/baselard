@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, IMAGES } from '../config/site';
+import { STUDIO } from '../data/studio';
+---
+<BaseLayout title="The Studio — Baselard Studios" description="Inside Baselard Studios in Udaipur: recording, control room and creative spaces.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">THE SPACE / UDAIPUR</span><h1>A room for<br /><em>possibility.</em></h1><p>A creative base for capturing performances, shaping sound and bringing ideas to life.</p><div class="page-hero-meta"><span>5/256 · SECTOR 14</span><span>GOVERDHAN VILAS · UDAIPUR</span></div></div></section>
+  <section class="studio-gallery"><div class="wrap studio-gallery-grid"><figure class="gallery-large"><img src={IMAGES.controlRoom} alt="Baselard Studios control room and mixing desk" loading="lazy" width="1024" height="1024"/><figcaption>01 / CONTROL ROOM</figcaption></figure><figure><img src={IMAGES.microphone} alt="Studio microphone and pop filter" loading="lazy" width="1024" height="1024"/><figcaption>02 / RECORDING</figcaption></figure><figure><img src={IMAGES.performance} alt="Live performance by a Baselard-associated artist" loading="lazy" width="1024" height="1024"/><figcaption>03 / PERFORMANCE</figcaption></figure></div></section>
+  <section class="section studio-details"><div class="wrap studio-detail-grid"><div><span class="eyebrow">THE STUDIO</span><h2>Built around<br />the <em>work.</em></h2></div><div><p>{STUDIO.story}</p><p>Publicly listed services include recording, voiceover and dubbing, Foley and instrument recording, music production, mix & master, video production, and artist branding / consulting.</p><a class="text-link" href="/services/">Explore capabilities ↗</a></div></div></section>
+  <section class="section section-dark"><div class="wrap location-panel"><div><span class="eyebrow">FIND THE STUDIO</span><h2>Udaipur,<br /><em>Rajasthan.</em></h2><p>{SITE.address}</p><p>{SITE.hours}</p></div><div class="location-actions"><a class="button button-light" href={SITE.map} target="_blank" rel="noreferrer">Open directions ↗</a><a class="button button-quiet" href={`tel:${SITE.phone}`}>Call {SITE.phoneDisplay}</a></div></div></section>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import CreditLogo from './CreditLogo.astro';
+import { PRESS_OUTLETS, COLLABORATORS } from '../../../data/studio';
+---
+<section class="section section-credits credits-editorial">
+  <div class="wrap credits-editorial-grid">
+    <div class="editorial-col-intro">
+      <span class="eyebrow">02 / SELECTED CREDITS</span>
+      <h2>Who We’ve Worked With.</h2>
+      <p>Labels, film production houses, and media publications connected to the studio’s catalog and founder profile.</p>
+
+      <div class="editorial-seal">
+        <img src="/images/logo.jpg" alt="Baselard Studios Official Seal" width="52" height="52" loading="lazy" />
+        <div class="editorial-seal-meta">
+          <strong>Baselard Studios</strong>
+          <span>Audio Production & Post Facility</span>
+          <small>Udaipur, Rajasthan · Est. 2016</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="credits-editorial-list">
+      {COLLABORATORS.map((item, index) => (
+        <div class="editorial-row">
+          <span class="editorial-index">0{index + 1}</span>
+          <div class="editorial-logo-box">
+            <CreditLogo id={item.id} size={44} />
+          </div>
+          <div class="editorial-details">
+            <div class="editorial-line-title">
+              <b>{item.name}</b>
+              <span class="editorial-tag">{item.badge}</span>
+            </div>
+            <span class="editorial-category">{item.category}</span>
+            <small class="editorial-note">{item.note}</small>
+          </div>
+        </div>
+      ))}
+
+      <div class="press-mini">
+        <span class="eyebrow">AS FEATURED IN</span>
+        <div class="press-mini-list">
+          {PRESS_OUTLETS.map((item) => (
+            <a href={item.url} target="_blank" rel="noreferrer" class="press-mini-item">
+              <CreditLogo id={item.id} size={20} />
+              <span>{item.name}</span>
+              <i aria-hidden="true">↗</i>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

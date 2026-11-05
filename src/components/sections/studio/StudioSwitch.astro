@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import StudioSplit from './StudioSplit.astro';
+import StudioStack from './StudioStack.astro';
+import StudioManifesto from './StudioManifesto.astro';
+const variant = EXPERIENCE.studio;
+---
+{variant === 'stack' ? <StudioStack /> : variant === 'manifesto' ? <StudioManifesto /> : <StudioSplit />}

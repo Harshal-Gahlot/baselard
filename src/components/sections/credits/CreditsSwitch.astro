@@ -1,0 +1,8 @@
+---
+import { EXPERIENCE } from '../../../config/experience';
+import CreditsWall from './CreditsWall.astro';
+import CreditsTicker from './CreditsTicker.astro';
+import CreditsEditorial from './CreditsEditorial.astro';
+const variant = EXPERIENCE.credits;
+---
+{variant === 'ticker' ? <CreditsTicker /> : variant === 'editorial' ? <CreditsEditorial /> : <CreditsWall />}

@@ -1,0 +1,31 @@
+---
+import { SITE } from '../../config/site';
+const links = [
+  { href: '/work/', label: 'Work' },
+  { href: '/services/', label: 'Capabilities' },
+  { href: '/studio/', label: 'Studio' },
+  { href: '/story/', label: 'Story' },
+];
+const path = Astro.url.pathname;
+---
+<header class="site-header" data-header>
+  <div class="header-inner wrap">
+    <a class="wordmark" href="/" aria-label="Baselard Studios home">
+      <span class="wordmark-main">BASELARD<span class="reg">®</span></span>
+      <span class="wordmark-sub">STUDIOS / UDAIPUR</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {links.map((link) => <a class:list={["nav-link", path === link.href ? "is-current" : ""]} href={link.href}>{link.label}</a>)}
+    </nav>
+    <a class="header-cta" href="/contact/">Start a project <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-mobile-nav inert>
+    {links.map((link) => <a href={link.href}>{link.label}<span>↗</span></a>)}
+    <a href="/press/">Press & recognition <span>↗</span></a>
+    <a href="/contact/">Start a project <span>↗</span></a>
+    <p>INDEPENDENT AUDIO-VISUAL STUDIO<br />UDAIPUR · INDIA</p>
+  </nav>
+</header>

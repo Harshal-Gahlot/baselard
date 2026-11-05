@@ -1,0 +1,13 @@
+---
+import SectionHeading from '../../global/SectionHeading.astro';
+import ProjectCard from '../../global/ProjectCard.astro';
+import { FEATURED_PROJECTS } from '../../../data/projects';
+---
+<section class="section section-work">
+  <div class="wrap">
+    <SectionHeading index="01" eyebrow="RECENT PROJECTS / SELECTED WORK" title="Glimpse of our Work" text="A few recent highlights from the studio archive. Project discovery is editorially curated; release links open the public YouTube search." link="/work/" linkLabel="View all projects" />
+    <div class="project-grid project-grid-featured">
+      {FEATURED_PROJECTS.map((project, index) => <ProjectCard project={project} index={index} />)}
+    </div>
+  </div>
+</section>

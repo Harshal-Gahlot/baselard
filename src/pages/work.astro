@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ALL_PROJECTS } from '../data/projects';
+import ProjectCard from '../components/global/ProjectCard.astro';
+import { SITE } from '../config/site';
+---
+<BaseLayout title={`Work — ${SITE.name}`} description="Selected music, film, recording and artist collaborations from Baselard Studios.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">THE ARCHIVE / 001—{String(ALL_PROJECTS.length).padStart(2,'0')}</span><h1>Work that<br /><em>leaves a mark.</em></h1><p>Originals, film music and artist collaborations. A public-facing selection of credits listed by the studio.</p><div class="page-hero-meta"><span>{ALL_PROJECTS.length} PROJECT ENTRIES</span><span>UDAIPUR · INDIA</span></div></div></section>
+  <section class="section archive-section"><div class="wrap">
+    <div class="archive-controls"><label class="archive-search"><span>SEARCH THE ARCHIVE</span><input type="search" placeholder="Type a title, artist or service…" data-project-search aria-label="Search projects" /></label><div class="filter-pills" role="group" aria-label="Filter projects"><button class="filter-pill is-active" type="button" data-filter="all">All</button><button class="filter-pill" type="button" data-filter="Originals">Originals</button><button class="filter-pill" type="button" data-filter="Film & screen">Film & screen</button><button class="filter-pill" type="button" data-filter="Artist collaborations">Artist collaborations</button><button class="filter-pill" type="button" data-filter="YouTube discovery">New uploads</button></div></div>
+    <p class="archive-count" data-archive-count>SHOWING {ALL_PROJECTS.length} PROJECTS</p>
+    <div class="archive-grid" data-project-grid>{ALL_PROJECTS.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
+    <p class="archive-empty" data-archive-empty hidden>No projects match that search. Try another title or category.</p>
+    <div class="archive-note"><span class="eyebrow">A NOTE ON LINKS</span><p>Where a direct video URL was not independently confirmed, project links open a YouTube search for the exact title. Replace them with official release URLs as they are confirmed.</p></div>
+  </div></section>
+</BaseLayout>
