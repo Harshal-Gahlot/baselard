@@ -96,6 +96,68 @@ export const COLLABORATORS: Collaborator[] = [
   },
 ];
 
+export const STUDIO_ROW_1: Collaborator[] = [
+  {
+    id: 'zee-music',
+    name: 'Zee Music Company',
+    category: 'Record Label & Publishing',
+    note: 'Music label / release credit',
+    badge: 'RELEASE LABEL',
+  },
+  {
+    id: 'balaji-telefilms',
+    name: 'Balaji Telefilms',
+    category: 'Film & Television Production',
+    note: 'Film production collaboration',
+    badge: 'PRODUCTION',
+  },
+  {
+    id: 'global-music',
+    name: 'Global Music Junction',
+    category: 'Music Distribution & Label',
+    note: 'Digital release & distribution',
+    badge: 'DISTRIBUTION',
+  },
+  {
+    id: 'baselard-studios',
+    name: 'Baselard Studios',
+    category: 'Audio Production & Post Facility',
+    note: 'Flagship recording facility',
+    badge: 'STUDIO FACILITY',
+  },
+];
+
+export const STUDIO_ROW_2: Collaborator[] = [
+  {
+    id: 'balaji-telefilms',
+    name: 'Balaji Telefilms',
+    category: 'Film & Screen Score',
+    note: 'Original teaser score & dubbing',
+    badge: 'FILM & SCREEN',
+  },
+  {
+    id: 'global-music',
+    name: 'Global Music Junction',
+    category: 'Music Distribution',
+    note: 'Regional catalog releases',
+    badge: 'CATALOG PARTNER',
+  },
+  {
+    id: 'zee-music',
+    name: 'Zee Music Company',
+    category: 'Publishing Credit',
+    note: 'Song & artist credit catalog',
+    badge: 'PUBLISHING',
+  },
+  {
+    id: 'baselard-studios',
+    name: 'Baselard Audio Lab',
+    category: 'Mix & Dolby Mastering',
+    note: 'Stereo & surround sound post',
+    badge: 'POST-PRODUCTION',
+  },
+];
+
 export const AWARDS = [
   'Making Udaipur Proud — Shades of Udaipur',
   'Sangeet Gaurav Award',

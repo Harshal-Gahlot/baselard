@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 — editorial projects layout and grand cta
+- Removed top-aligned "View all projects" link in `ProjectsEditorial.astro` and repositioned it centered beneath the featured work cards.
+- Designed a grand pill button (`.button-grand`) with depth shadows, micro-meta subtitle, hover glow, and interactive arrow badge.
+- Adjusted description text alignment and spacing in `.section-heading-side` for headings without inline links.
+
 ## 1.1.0 — credits UI and brand logo enhancements
 - Added authentic vector SVG logos and metadata for all industry collaborators (Zee Music Company, Global Music Junction, Balaji Telefilms).
 - Added publication logos, media classifications, and interactive outbound cards for all press outlets (The Statesman, ANI, Mid-Day, Yahoo News, Dailyhunt, IBTimes, UdaipurBlog, LatestLY).

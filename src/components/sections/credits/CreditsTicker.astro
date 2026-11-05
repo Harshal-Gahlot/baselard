@@ -1,17 +1,20 @@
 ---
 import CreditLogo from './CreditLogo.astro';
-import { PRESS_OUTLETS, COLLABORATORS } from '../../../data/studio';
+import { PRESS_OUTLETS, STUDIO_ROW_1, STUDIO_ROW_2 } from '../../../data/studio';
 
-// Quadruple items to ensure seamless infinite looping on all screen sizes
-const tickerItems = [...COLLABORATORS, ...COLLABORATORS, ...COLLABORATORS, ...COLLABORATORS];
+// Repeat items to ensure seamless infinite looping on all screen sizes up to 4K
+const row1Items = [...STUDIO_ROW_1, ...STUDIO_ROW_1, ...STUDIO_ROW_1, ...STUDIO_ROW_1];
+const row2Items = [...STUDIO_ROW_2, ...STUDIO_ROW_2, ...STUDIO_ROW_2, ...STUDIO_ROW_2];
+const pubItems = [...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS_OUTLETS, ...PRESS_OUTLETS];
 ---
+
 <section class="section section-credits credits-ticker-section">
   <div class="wrap">
     <div class="ticker-intro">
       <span class="eyebrow">SELECTED CREDITS / 02</span>
       <h2>Names that<br /><em>travel.</em></h2>
       <div class="ticker-intro-side">
-        <p>Collaborators, labels and publications connected to Baselard’s studio catalog.</p>
+        <p>Collaborators, labels, production houses and publications connected to Baselard’s studio catalog.</p>
         <div class="studio-mini-badge">
           <img src="/images/logo.jpg" alt="Baselard Studios Official Logo" width="28" height="28" loading="lazy" />
           <span>Independent Audio · Udaipur</span>
@@ -20,36 +23,70 @@ const tickerItems = [...COLLABORATORS, ...COLLABORATORS, ...COLLABORATORS, ...CO
     </div>
   </div>
 
-  <div class="logo-ticker" aria-label="Selected collaborators">
-    <div class="logo-ticker-track">
-      {tickerItems.map((item) => (
-        <div class="ticker-card">
-          <div class="ticker-card-logo">
-            <CreditLogo id={item.id} size={36} />
+  <div class="credits-ticker-stack" aria-label="Studio credits and featured publications">
+    <!-- Row 1: Studios & Record Labels (Scroll Left) -->
+    <div class="logo-ticker logo-ticker-row1" aria-label="Selected studio partners and record labels">
+      <div class="logo-ticker-track track-left">
+        {row1Items.map((item) => (
+          <div class="ticker-card">
+            <div class="ticker-card-logo">
+              <CreditLogo id={item.id} size={36} />
+            </div>
+            <div class="ticker-card-info">
+              <b>{item.name}</b>
+              <small>{item.badge}</small>
+            </div>
+            <i class="ticker-sep" aria-hidden="true">✳</i>
           </div>
-          <div class="ticker-card-info">
-            <b>{item.name}</b>
-            <small>{item.badge}</small>
-          </div>
-          <i class="ticker-sep" aria-hidden="true">✳</i>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
 
-  <div class="wrap ticker-press">
-    <div class="ticker-press-head">
-      <span class="eyebrow">FEATURED PUBLICATIONS</span>
-      <span class="ticker-press-subtitle">Media coverage & public founder mentions</span>
+    <!-- Row 2: Studio Productions & Screen Collaborations (Scroll Right / Reverse) -->
+    <div class="logo-ticker logo-ticker-row2" aria-label="Studio collaborations and catalog credits">
+      <div class="logo-ticker-track track-right">
+        {row2Items.map((item) => (
+          <div class="ticker-card ticker-card-alt">
+            <div class="ticker-card-logo">
+              <CreditLogo id={item.id} size={32} />
+            </div>
+            <div class="ticker-card-info">
+              <b>{item.name}</b>
+              <small>{item.badge}</small>
+            </div>
+            <span class="ticker-card-note">{item.note}</span>
+            <i class="ticker-sep ticker-sep-alt" aria-hidden="true">✦</i>
+          </div>
+        ))}
+      </div>
     </div>
-    <div class="ticker-press-grid">
-      {PRESS_OUTLETS.map((item) => (
-        <a href={item.url} target="_blank" rel="noreferrer" class="ticker-press-chip">
-          <CreditLogo id={item.id} size={24} />
-          <span class="ticker-press-name">{item.name}</span>
-          <span class="ticker-press-arrow" aria-hidden="true">↗</span>
-        </a>
-      ))}
+
+    <!-- Row 3: Featured Publications Ticker (Scroll Left) -->
+    <div class="ticker-press-strip">
+      <div class="wrap ticker-press-head">
+        <span class="eyebrow ticker-press-eyebrow">
+          <span class="ticker-live-dot" aria-hidden="true"></span>
+          FEATURED PUBLICATIONS
+        </span>
+        <span class="ticker-press-subtitle">Media coverage & public founder mentions · Click to read</span>
+      </div>
+
+      <div class="logo-ticker logo-ticker-row3" aria-label="Featured publications">
+        <div class="logo-ticker-track track-publications">
+          {pubItems.map((item) => (
+            <a href={item.url} target="_blank" rel="noreferrer" class="ticker-pub-chip">
+              <span class="ticker-pub-logo">
+                <CreditLogo id={item.id} size={22} />
+              </span>
+              <span class="ticker-pub-body">
+                <span class="ticker-pub-name">{item.name}</span>
+                <small class="ticker-pub-type">{item.type}</small>
+              </span>
+              <span class="ticker-pub-arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>
