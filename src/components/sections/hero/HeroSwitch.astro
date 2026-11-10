@@ -3,6 +3,7 @@ import { EXPERIENCE } from '../../../config/experience';
 import HeroSonic from './HeroSonic.astro';
 import HeroType from './HeroType.astro';
 import HeroConsole from './HeroConsole.astro';
+import HeroRitual from './HeroRitual.astro';
 const variant = EXPERIENCE.hero;
 ---
-{variant === 'type' ? <HeroType /> : variant === 'console' ? <HeroConsole /> : <HeroSonic />}
+{variant === 'type' ? <HeroType /> : variant === 'console' ? <HeroConsole /> : variant === 'ritual' ? <HeroRitual/> : <HeroSonic />}

@@ -1,25 +1,30 @@
 ---
-import SectionHeading from '../../global/SectionHeading.astro';
-import ProjectCard from '../../global/ProjectCard.astro';
-import { FEATURED_PROJECTS } from '../../../data/projects';
+import SectionHeading from "../../global/SectionHeading.astro";
+import ProjectCard from "../../global/ProjectCard.astro";
+import { FEATURED_PROJECTS } from "../../../data/projects";
 ---
+
 <section class="section section-work projects-editorial">
-  <div class="wrap">
-    <SectionHeading
-      index="01"
-      eyebrow="RECENT PROJECTS / SELECTED WORK"
-      title="Glimpse of our Work"
-      text="A few recent highlights from the studio archive. Project discovery is editorially curated; release links open the public YouTube search."
-    />
-    <div class="project-grid project-grid-featured">
-      {FEATURED_PROJECTS.map((project, index) => <ProjectCard project={project} index={index} />)}
+    <div class="wrap">
+        <SectionHeading
+            index="01"
+            eyebrow="RECENT PROJECTS / SELECTED WORK"
+            title="Glimpse of our Work"
+            text="A few recent highlights from the studio archive. Project discovery is editorially curated; release links open the public YouTube search."
+        />
+        <div class="project-grid project-grid-featured">
+            {
+                FEATURED_PROJECTS.map((project, index) => (
+                    <ProjectCard project={project} index={index} />
+                ))
+            }
+        </div>
+        <div class="projects-editorial-cta">
+            <a class="button button-grand" href="/work/">
+                <span class="button-grand-text">Explore Our Work</span>
+                <!-- <span class="button-grand-meta">Explore the Full Studio Archive</span> -->
+                <span class="button-grand-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
     </div>
-    <div class="projects-editorial-cta">
-      <a class="button button-grand" href="/work/">
-        <span class="button-grand-text">Explore Our Work</span>
-        <!-- <span class="button-grand-meta">Explore the Full Studio Archive</span> -->
-        <span class="button-grand-arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </div>
 </section>

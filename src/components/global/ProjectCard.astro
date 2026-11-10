@@ -1,20 +1,45 @@
 ---
-import type { Project } from '../../data/projects';
-interface Props { project: Project; index?: number; compact?: boolean; }
+import type { Project } from "../../data/projects";
+interface Props {
+    project: Project;
+    index?: number;
+    compact?: boolean;
+}
 const { project, compact = false } = Astro.props;
 const visualClass = `project-visual visual-${project.visual}`;
 ---
-<article class:list={["project-card", compact && "project-card-compact"]} data-project-card data-category={project.category} data-search={`${project.title} ${project.services} ${project.category}`.toLowerCase()}>
-  <a class={visualClass} href={project.watchUrl} target="_blank" rel="noreferrer" aria-label={`Find ${project.title} on YouTube`}>
-    <!-- <span class="project-visual-no">{project.category.toUpperCase()}</span> -->
-    <!-- <span class="project-visual-mark">B<span>®</span></span> -->
-    <span class="project-visual-title">{project.title}</span>
-    <span class="project-visual-foot">
-  </span>
-    <span class="project-visual-orbit" aria-hidden="true"></span>
-  </a>
-  <div class="project-card-info">
-    <div><span class="eyebrow">{project.category}</span><h3>{project.title}</h3><p>{project.services}</p></div>
-    <a class="round-arrow" href={project.watchUrl} target="_blank" rel="noreferrer" aria-label={`Find ${project.title}`}>↗</a>
-  </div>
+
+<article
+    class:list={["project-card", compact && "project-card-compact"]}
+    data-project-card
+    data-category={project.category}
+    data-search={`${project.title} ${project.services} ${project.category}`.toLowerCase()}
+>
+    <a
+        class={visualClass}
+        href={project.watchUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Find ${project.title} on YouTube`}
+    >
+        <!-- <span class="project-visual-no">{project.category.toUpperCase()}</span> -->
+        <!-- <span class="project-visual-mark">B<span>®</span></span> -->
+        <span class="project-visual-title">{project.title}</span>
+        <span class="project-visual-foot"> </span>
+        <span class="project-visual-orbit" aria-hidden="true"></span>
+    </a>
+    <div class="project-card-info">
+        <div>
+            <span class="eyebrow">{project.category}</span><h3>{project.title}</h3><p>
+                {project.services}
+            </p>
+        </div>
+        <a
+            class="round-arrow"
+            href={project.watchUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Find ${project.title}`}>↗</a
+        >
+    </div>
 </article>

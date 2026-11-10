@@ -19,6 +19,7 @@ export const SITE = {
 } as const;
 
 export const IMAGES = {
+  logo: '/images/baselard_logo.webp',
   microphone: 'https://baselardstudios.com/wp-content/uploads/2024/09/1-1024x1024.png',
   controlRoom: 'https://baselardstudios.com/wp-content/uploads/2024/09/2-1024x1024.png',
   performance: 'https://www.baselardstudios.com/wp-content/uploads/2024/05/331447783_543522767756174_6452402009437652847_n-1024x1024.jpg',

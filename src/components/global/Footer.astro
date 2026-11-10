@@ -1,10 +1,13 @@
 ---
 import { SITE } from '../../config/site';
+import brandLogo from '../../assets/baselard_studio_large_logo.png';
 ---
 <footer class="site-footer">
   <div class="wrap footer-top">
     <div>
-      <a class="footer-wordmark" href="/">BASELARD<span>®</span></a>
+      <a class="footer-wordmark" href="/" aria-label="Baselard Studios home">
+        <img src={brandLogo.src} alt="Baselard Studios" class="brand-logo footer-brand-logo" width="180" height="150" loading="lazy" />
+      </a>
       <p class="footer-tagline">Where sound meets vision.<br />Made with intent in Udaipur.</p>
     </div>
     <div class="footer-links">

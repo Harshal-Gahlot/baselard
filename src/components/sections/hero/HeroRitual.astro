@@ -1,0 +1,110 @@
+---
+/**
+ * HeroRitual — the new interactive hero (turntable + viewfinder).
+ * Lives next to your old hero; swap it in by importing <HeroRitual /> instead.
+ *
+ * NOTE: keep the same folder depth as your old hero component
+ * (src/components/<a>/<b>/File.astro) so these relative imports keep working.
+ * If you place it elsewhere, just fix the "../" counts.
+ */
+import { SITE } from "../../../config/site";
+import logo from "../../../data/logo.jpg";
+import "../../../styles/hero-ritual.css";
+
+const soundLetters = [..."Sound"];
+const cropCorners = ["tl", "tr", "bl", "br"];
+const regEdges = ["t", "b", "l", "r"];
+---
+
+<section class="hero-ritual" data-hero-ritual>
+    <!-- Viewfinder (desktop only, hidden via CSS on phones) -->
+    <div class="hr-vfs" aria-hidden="true">
+        <i class="hr-vf hr-vf--tl"></i><i class="hr-vf hr-vf--tr"></i>
+        <i class="hr-vf hr-vf--bl"></i><i class="hr-vf hr-vf--br"></i>
+        <i class="hr-rec"></i><span class="hr-rec-t">REC</span>
+        <svg class="hr-bat" viewBox="0 0 24 12">
+            <rect x=".5" y=".5" width="20" height="11" rx="2"></rect>
+            <rect class="hr-bat-n" x="21.5" y="3.5" width="2" height="5" rx=".6"></rect>
+            <rect class="hr-bat-f" x="2.5" y="2.5" width="11.2" height="7" rx="1"></rect>
+        </svg>
+        <span class="hr-res">4K</span>
+        <span class="hr-res hr-res--fs"><b class="hr-fi">ƒ</b> 2.2</span>
+    </div>
+
+    <!-- Crop + registration marks (desktop only) -->
+    <div class="hr-marks" aria-hidden="true">
+        {
+            cropCorners.map((c) => (
+                <svg class={`hr-crop hr-crop--${c}`} viewBox="0 0 28 28">
+                    <path d="M0 14H8M14 0V8" />
+                </svg>
+            ))
+        }
+        {
+            regEdges.map((e) => (
+                <svg class={`hr-reg hr-reg--${e}`} viewBox="0 0 26 26">
+                    <circle cx="13" cy="13" r="6" />
+                    <path d="M13 0V26M0 13H26" />
+                </svg>
+            ))
+        }
+    </div>
+
+    <div class="hr-grid wrap">
+        <div class="hr-copy">
+            <span class="eyebrow hr-kicker">
+                INDEPENDENT AUDIO-VISUAL STUDIO · EST. {SITE.founded}
+            </span>
+
+            <h1 class="hr-title" aria-label="Sound meets vision.">
+                <span class="hr-sound" aria-hidden="true">{soundLetters.map((c) => <i class="hr-l">{c}</i>)}</span><br />
+                <em class="hr-meets" aria-hidden="true">meets</em><br />
+                <span class="hr-vision" aria-hidden="true">vision<span class="hr-period">.</span></span>
+            </h1>
+
+            <p class="hr-deck">
+                We create the <b>sound</b>, shape the <b>image</b> and bring the <b>whole thing</b> together.
+            </p>
+
+            <div class="hr-actions">
+                <a class="button button-light" href="/work/">Explore selected work <span>↗</span></a>
+            </div>
+        </div>
+
+        <div class="hr-art" role="button" tabindex="0" aria-label="Play or replay the studio sound">
+            <div class="hr-turntable">
+                <div class="hr-disc" aria-hidden="true">
+                    <div class="hr-disc-inner">
+                        <img src={logo.src} width={logo.width} height={logo.height} alt="" decoding="async" />
+                    </div>
+                </div>
+                <div class="hr-sheen" aria-hidden="true"></div>
+                <div class="hr-glint" aria-hidden="true"></div>
+                <div class="hr-ring" aria-hidden="true"></div>
+                <svg class="hr-tonearm" viewBox="0 0 100 100" aria-hidden="true">
+                    <g class="hr-arm">
+                        <rect x="106.2" y="-4" width="3.6" height="10" fill="#555"></rect>
+                        <line x1="108" y1="6" x2="108" y2="54" stroke="#bdbab2" stroke-width="1.3"></line>
+                        <path d="M106.2 54h3.6l-.6 6.4h-2.4z" fill="#e8e5dc"></path>
+                    </g>
+                    <circle cx="108" cy="6" r="5" fill="#1b1b1b" stroke="#777" stroke-width=".6"></circle>
+                    <circle cx="108" cy="6" r="1.6" fill="#999"></circle>
+                </svg>
+            </div>
+
+            <svg class="hr-wave" viewBox="0 0 640 180" role="presentation" aria-hidden="true">
+                <path d="M0 90 C42 90 42 22 82 22 S122 158 162 158 202 48 242 48 282 130 322 130 362 18 402 18 442 162 482 162 522 74 562 74 602 90 640 90"></path>
+                <path d="M0 90 C42 90 42 54 82 54 S122 126 162 126 202 72 242 72 282 108 322 108 362 52 402 52 442 128 482 128 522 82 562 82 602 90 640 90"></path>
+            </svg>
+
+            <div class="hr-cue is-hidden" aria-hidden="true"><i></i><span>Click the record to play</span></div>
+            <span class="hr-label">BASELARD STUDIO<br />UDAIPUR</span>
+        </div>
+    </div>
+
+    <div class="hr-cursor" aria-hidden="true"><span class="hr-cursor-icon"></span></div>
+</section>
+
+<script>
+    import "../../../scripts/hero-ritual";
+</script>

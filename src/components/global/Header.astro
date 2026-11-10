@@ -1,4 +1,6 @@
 ---
+import brandLogo from '../../assets/baselard_studio_large_logo_only.png';
+
 const links = [
   { href: '/work/', label: 'Work' },
   { href: '/services/', label: 'Capabilities' },
@@ -10,8 +12,11 @@ const path = Astro.url.pathname;
 <header class="site-header" data-header>
   <div class="header-inner wrap">
     <a class="wordmark" href="/" aria-label="Baselard Studios home">
-      <span class="wordmark-main">BASELARD<span class="reg">®</span></span>
-      <span class="wordmark-sub">STUDIOS / UDAIPUR</span>
+      <img src={brandLogo.src} alt="Baselard Studios" class="brand-logo header-brand-logo" width="96" height="76" fetchpriority="high" />
+      <div class="header-brand-name-container">
+          <p class="header-brand-name-first">BASELARD</p>
+          <span class="header-brand-name-second">STUDIOS</span>
+      </div>
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
       {links.map((link) => <a class:list={["nav-link", path === link.href ? "is-current" : ""]} href={link.href}>{link.label}</a>)}

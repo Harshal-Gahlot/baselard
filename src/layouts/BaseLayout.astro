@@ -2,7 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
-import { SITE } from '../config/site';
+import { SITE, IMAGES } from '../config/site';
 import '../styles/global.css';
 
 interface Props {
@@ -27,12 +27,18 @@ const canonical = new URL(Astro.url.pathname, SITE.url).toString();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
     <title>{title}</title>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {image && <meta property="og:image" content={image} />}
+    {image ? (
+      <meta property="og:image" content={image} />
+    ) : (
+      <meta property="og:image" content={new URL(IMAGES.logo, SITE.url).toString()} />
+    )}
     <meta name="twitter:card" content="summary_large_image" />
     <ClientRouter />
   </head>
